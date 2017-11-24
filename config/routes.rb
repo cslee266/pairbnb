@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'articles/index'
+
   get 'welcome/home'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]

@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adding clearance gem for lightweight user management
 gem 'clearance'
+
+# Adding Figaro gem for protecting privacy
+gem 'figaro'
