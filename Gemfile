@@ -61,3 +61,6 @@ gem 'figaro'
 
 # Adding OmniAuth-Facebook gem
 gem 'omniauth-facebook'
+
+# Adding Faker gem
+gem 'faker'
