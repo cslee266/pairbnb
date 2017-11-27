@@ -58,3 +58,6 @@ gem 'clearance'
 
 # Adding Figaro gem for protecting privacy
 gem 'figaro'
+
+# Adding OmniAuth-Facebook gem
+gem 'omniauth-facebook'
