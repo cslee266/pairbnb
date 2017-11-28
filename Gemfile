@@ -55,3 +55,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adding clearance gem for lightweight user management
 gem 'clearance'
+
+# Adding Figaro gem for protecting privacy
+gem 'figaro'
+
+# Adding OmniAuth-Facebook gem
+gem 'omniauth-facebook'
+
+# Adding Faker gem
+gem 'faker'
+
+# Adding Kaminari gem for pagination
+gem 'kaminari'
