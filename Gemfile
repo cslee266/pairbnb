@@ -64,3 +64,6 @@ gem 'omniauth-facebook'
 
 # Adding Faker gem
 gem 'faker'
+
+# Adding Kaminari gem for pagination
+gem 'kaminari'
