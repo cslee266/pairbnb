@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'articles/index'
+  get 'listings/index'
 
   get 'welcome/home'
 
