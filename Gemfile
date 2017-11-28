@@ -67,3 +67,6 @@ gem 'faker'
 
 # Adding Kaminari gem for pagination
 gem 'kaminari'
+
+# Adding CarrierWave gem for uploading photos
+gem 'carrierwave', '~> 1.0'
