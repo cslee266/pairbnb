@@ -70,3 +70,4 @@ gem 'kaminari'
 
 # Adding CarrierWave gem for uploading photos
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'

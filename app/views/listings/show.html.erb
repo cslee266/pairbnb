@@ -1,5 +1,8 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<h1>listing#show</h1>
+
+<% user = User.find(@listing.user_id) %>
+
+<h4>Posted by <%= user.name %></h4>
 
 <table>
 	<tr>
@@ -15,12 +18,11 @@
 		<th>Address</th>
 		<th>Price</th>
 		<th>Description</th>
-		<th>User ID</th>
 	</tr>
 
-<% @listings.each do |x| %>
+<% x = @listing %>
 <tr>
-<td><%= link_to x.name, user_listing_path(id: x.id) %></td>
+<td><%= x.name %></td>
 <td><%= x.property_type %></td>
 <td><%= x.room_number %></td>
 <td><%= x.bed_number %></td>
@@ -32,10 +34,6 @@
 <td><%= x.address %></td>
 <td><%= x.price %></td>
 <td><%= x.description %></td>
-<td><%= x.user_id %></td>
 </tr>
-<% end %>
 
 </table>
-
-<%= paginate @listings %>

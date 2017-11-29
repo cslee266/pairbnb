@@ -21,4 +21,6 @@ class User < ApplicationRecord
 	end
 
 	enum status: [ :superadmin, :moderator, :customer ]
+
+	mount_uploader :avatar, AvatarUploader
 end
