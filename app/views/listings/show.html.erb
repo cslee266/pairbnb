@@ -85,3 +85,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div>
+  <%= form_for [@listing, @reservation], url: listing_reservations_path(@listing.id) do |form| %>
+    <%= render partial: '/reservations/form', object: form %>
+    <%= form.submit "Submit Reservation" %>
+  <% end %>
+</div>

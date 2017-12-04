@@ -1,10 +1,14 @@
 class UsersController < Clearance::UsersController
+	before_action :find_user, only: [:show, :edit, :update]
+
 	def edit
-		@user = User.find(current_user.id)
+	end
+
+	def show
+		@reservations = @user.reservations
 	end
 
 	def update
-		@user = User.find(params[:id])
 		if @user.update(user_params)
 			redirect_to root_path
 		else
@@ -13,6 +17,9 @@ class UsersController < Clearance::UsersController
 	end
 
 	private
+	def find_user
+		@user = User.find(params[:id])
+	end
 
 	def user_params
 		params.require(:user).permit(:email, :name, :password, :avatar)

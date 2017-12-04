@@ -1,0 +1,27 @@
+<h1>users#show</h1>
+<%= link_to "Edit Profile", edit_user_path(@user.id) %>
+
+<h2>Reservations</h2>
+<table>
+	<tr>
+		<th>Listing Title</th>
+		<th>Check In Date</th>
+		<th>Check Out Date</th>
+		<th>Number of Guests</th>
+		<th>Total Price</th>
+
+	</tr>
+
+
+	<% @reservations.each do |reservation| %>
+	<tr>
+		<td><%= link_to reservation.listing.name, reservation.listing %></td>
+		<td><%= reservation.checkin_date.strftime('%d %B %Y') %></td>
+		<td><%= reservation.checkout_date.strftime('%d %B %Y') %></td>
+		<td><%= reservation.num_guests %></td>
+		<td><%= reservation.listing.price %></td>
+		<td><%= link_to "Cancel Reservation", reservation, method: :delete %></td>
+	</tr>
+	<% end %>
+
+</table>

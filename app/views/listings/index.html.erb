@@ -20,7 +20,7 @@
 
 <% @listings.each do |x| %>
 <tr>
-<td><%= link_to x.name, user_listing_path(id: x.id) %></td>
+<td><%= link_to x.name, listing_path(id: x.id) %></td>
 <td><%= x.property_type %></td>
 <td><%= x.room_number %></td>
 <td><%= x.bed_number %></td>

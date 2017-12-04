@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
+  before_action :find_listing, only: [:show, :edit, :update] 
+
   def create
-    @listing = Listing.new(listing_params)
-    @listing.user_id = current_user.id if current_user
+    @listing = current_user.listings.new(listing_params)
     if @listing.save
       flash[:success] = "Listing Successfully Created"
       redirect_to user_listings_path
@@ -15,7 +16,18 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
+    @reservation = @listing.reservations.new
+  end
+
+  def update
+    if @listing.update(listing_params)
+      redirect_to @listing
+    else
+      render :edit
+    end
+  end
+
+  def edit
   end
 
   def new
@@ -24,6 +36,12 @@ class ListingsController < ApplicationController
     #   flash[:notice] = "Sorry. You are not allowed to perform this action."
     #   return redirect_to welcome_home_path, notice: "Sorry. You do not have the permission to verify a property."
     # end
+  end
+
+  private
+
+  def find_listing
+    @listing = Listing.find(params[:id])
   end
 
   def listing_params
