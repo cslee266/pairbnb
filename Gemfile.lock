@@ -39,6 +39,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
     autoprefixer-rails (7.1.6)
       execjs
@@ -264,6 +266,10 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -302,6 +308,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.21.0)
+    public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -407,6 +414,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  letter_opener
   listen (~> 3.0.5)
   mini_magick
   omniauth-facebook

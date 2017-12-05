@@ -52,6 +52,8 @@
 
 </table>
 
+<% unless @listing.photos %>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -85,6 +87,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<% end %>
 
 <div>
   <%= form_for [@listing, @reservation], url: listing_reservations_path(@listing.id) do |form| %>

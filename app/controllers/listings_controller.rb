@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.new(listing_params)
     if @listing.save
       flash[:success] = "Listing Successfully Created"
-      redirect_to user_listings_path
+      redirect_to listings_path
     else
       render 'new'
     end
