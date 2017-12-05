@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
 		@reservation = current_user.reservations.new(reservation_params)
 		@reservation.listing = @listing
 		if @reservation.save
+			ReservationMailer.reservation_email(@reservation.user, @listing.user, @reservation.id).deliver_now
 			redirect_to current_user, notice: 'Reservation was successfully created.'
 		else
 			render "listings/show"
