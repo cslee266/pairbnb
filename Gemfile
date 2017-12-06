@@ -76,3 +76,5 @@ gem 'fog'
 gem 'letter_opener', :group => :development
 
 gem 'sidekiq'
+
+gem 'rails_12factor'
