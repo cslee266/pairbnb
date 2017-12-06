@@ -3,8 +3,10 @@
 
 <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 
+<% if current_user %>
 <%= link_to "See All Listings", listings_path(current_user.id) %>
 
 <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
 
 <%= link_to "Create New Listing", new_listing_path(current_user.id) %>
+<% end %>
