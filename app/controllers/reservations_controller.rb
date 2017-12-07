@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
 		@reservation = current_user.reservations.new(reservation_params)
 		@reservation.listing = @listing
 		if @reservation.save
-			ReservationJob.perform_later(@reservation.user, @listing.user, @reservation.id)
+			ReservationJob.perform_now(@reservation.user, @listing.user, @reservation.id)
 			redirect_to current_user, notice: 'Reservation was successfully created.'
 		else
 			render "listings/show"
